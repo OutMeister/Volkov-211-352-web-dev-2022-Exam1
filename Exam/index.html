@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en" data-layout="horizontal">
+	<head>
+		<meta charset="utf-8" />
+		<title>NTA Travel. Экскурсии по Москве</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta content="Достопримечательности Москвы" name="description" />
+		<meta content="NTA Travel" name="author" />
+		<!-- App favicon -->
+		<link rel="shortcut icon" href="assets/images/logosm.png">
+		<link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+		<!-- Layout config Js -->
+		<script src="assets/js/layout.js"></script>
+		<!-- Bootstrap Css -->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<!-- Icons Css -->
+		<link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<!-- App Css-->
+		<link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+		<!-- custom Css-->
+		<link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<div class="modal bg-success" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content bg-light">
+					<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Оформление заявки</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+					</div>
+					<div class="modal-body">
+						<p id="modal-guid-name">
+							ФИО гида:
+							<span>-</span>
+						</p>
+						<p id="modal-route-name">
+							Маршрут:
+							<span>-</span>
+						</p>
+						<label>Дата:</label>
+						<input type="date" name="trip-date">
+						<label>Начало:</label>
+						<input type="time" name="trip-start">
+						<label>Длительность:</label>
+						<select name="trip-duration">
+							<option value="1">1 час</option>
+							<option value="2">2 часа</option>
+							<option value="3">3 часа</option>
+						</select>
+						<br />
+						<label>Количество человек:</label>
+						<input type="number" name="members">
+					</div>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+					<button type="button" class="btn btn-primary">Сохранить</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="layout-wrapper">
+			<header id="page-topbar">
+				<div class="layout-width">
+					<div class="navbar-header">
+						<nav class="navbar navbar-light">
+							<a class="navbar-brand" href="#">
+							  <img src="assets/images/logo.jpeg" width="40" height="40" class="d-inline-block align-top" alt="">
+							 NTA Travel
+							</a>
+						  </nav>
+							<div class="btn d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3">
+								<a class="btn btn-primary">Личный кабинет</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="navbar-menu bg-secondary">
+				<div class="navbar-brand-box bg-secondary">
+					<a href="index.html" class="logo logo">
+						<span class="logo-sm">
+							<img src="assets/images/logosm.png" height="22">
+						</span>
+						<span class="logo-lg">
+							<img src="assets/images/logo.jpeg" height="40">
+						</span>
+					</a>
+					</button>
+				</div>
+			</div>
+			<div class="vertical-overlay"></div>
+			<div class="main-content bg-success">
+				<div class="page-content">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-12">
+								<div class="page-title-box d-sm-flex align-items-center justify-content-between">
+									<h4 class="mb-sm-2">Туры по достопримечательностям Москвы</h4>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xl-12">
+								<div class="card">
+									<div class="card-body bg-light">
+										<div class="d-flex">
+											<div class="flex-shrink-0 avatar-md bg-light rounded p-1">
+												<img src="assets/images/logosm.png" alt="" class="img-fluid d-block">
+											</div>
+											<div class="flex-grow-1 ms-3">
+												<h5 class="fs-15"><a href="index.html" class="link-primary">NTA Travel</a></h5>
+												<p class="text-muted mb-0">Экскурсии по Москве</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xl-12">
+								<div class="live-preview">
+									<div class="row">
+										<div class="col-xl-12">
+											<div class="alert alert-success alert-dismissible fade show" role="alert">
+												Чтобы посмотреть заявки, перейдите в личный кабинет.
+												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">&#10006;</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xxl-6">
+								<div class="card">
+									<div class="card-body bg-light">
+										<div class="col-xxl-3 col-md-8 mx-auto">
+											<figure class="figure mb-0">
+												<img src="assets/images/logo.jpeg" class="figure-img img-fluid rounded" alt="...">
+											</figure>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xxl-6">
+								<div class="card">
+									<div class="card-body bg-light">
+										<div class="mt-6 mb-2">
+											<h5 class="fs-6">Ваше путешествие будет удачным, если вы выберете «НТА-Тревел». Свяжитесь с нами, и мы поможем организовать туры по Москве!</h5>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xxl-12">
+								<div class="card">
+									<div class="card-header align-items-center d-flex bg-light">
+										<h4 class="card-title mb-3 flex-grow-1">О компании:</h4>
+									</div>
+									<div class="live-preview bg-light">
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="d-flex justify-content-center">
+													<div class="card" style="width: 17rem;">
+														<img class="card-img-top col-xxl-3 col-xl-4 col-sm-6" src="assets/images/moscowpic.jpeg" alt="Кремль">
+														<div class="card-body">
+														  <p class="card-text">Вы окунетесь в историю Москвы</p>
+														</div>
+													  </div>
+													  <div class="card" style="width: 17rem;">
+														<img class="card-img-top col-xxl-3 col-xl-4 col-sm-6" src="assets/images/moscowpic1.jpeg" alt="Москва Сити">
+														<div class="card-body">
+														  <p class="card-text">Побываете в самых необычных местах Москвы</p>
+														</div>
+													  </div>
+													  <div class="card" style="width: 17rem;">
+														<img class="card-img-top col-xxl-3 col-xl-4 col-sm-6" src="assets/images/moscowpic2.png" alt="МГУ">
+														<div class="card-body">
+														  <p class="card-text">Цены на туры Вас впечатлят!</p>
+														</div>
+													  </div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="card bg-light">
+									<div class="card-header align-items-center d-flex bg-light">
+										<h4 class="card-title mb-3">Список маршрутов</h4>
+									</div>
+									<div class="card-body">
+										<div id="routes-list"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div id="guids-row" class="row">
+							<div class="col-lg-12">
+								<div class="card bg-light">
+									<div class="card-header align-items-center mb-3 d-flex bg-light">
+										<h4 id="guids-title" class="card-title mb-0 flex-grow-1">Список гидов по маршруту:</h4>
+									</div>
+									<div class="card-body">
+										<div id="guids-list"></div>
+									</div>
+								</div>
+							</div>
+						<button id="make-request" type="button" class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+							Оформить заявку	
+						</button>
+						</div>
+					</div>
+				</div>
+				
+				<footer class="footer bg-light">
+					<div class="container-fluid">
+						<div class="row bg-light">
+							<div class="col-sm-4 col-lg-12">
+								<img src="assets/images/logosm.png" width="30" height="30" class="d-inline-block align-top" alt="">
+								 © NTA Travel - Экскурсии по Москве, 2023
+							</div>
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="assets/libs/gridjs/gridjs.umd.js"></script>
+		<script src="assets/js/pages/gridjs.init.js"></script>
+		<script src="assets/js/scripts/home.js"></script>
+	</body>
+</html>
